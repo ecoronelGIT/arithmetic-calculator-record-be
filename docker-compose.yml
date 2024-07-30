@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: 'mysql:latest'
+    container_name: ac-records
+    ports:
+      - "3309:3306"
+    environment:
+      MYSQL_DATABASE: db-records
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - ./data/db:/var/lib/mysql
+    networks:
+      - basic-tier
+
+
+networks:
+  basic-tier:
+    driver: bridge

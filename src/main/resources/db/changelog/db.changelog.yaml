@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - objectQuotingStrategy: LEGACY
+  - include:
+      file: ./1-create-records-table.yaml
+      relativeToChangelogFile: true
